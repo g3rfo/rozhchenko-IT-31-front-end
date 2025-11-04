@@ -3,7 +3,7 @@ export interface DishCard {
   imgUrl: string;
   description: string;
   cookingTime: number;
-  complexity: 'easy' | 'medium' | 'hard';
+  complexity: 'Easy' | 'Medium' | 'Hard';
   servingFor: number;
   ingredients: string[];
   recipe: string;
