@@ -1,0 +1,15 @@
+.footer {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding-inline: 64px;
+  box-shadow: 0 0 4px 0 #E5E7EB;
+}
+
+.footer-title {
+  font-size: 12px;
+  line-height: 100%;
+  font-weight: 400;
+  color: #4B5563;
+}
+
