@@ -1,0 +1,13 @@
+.header {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding-inline: 64px;
+}
+
+.header-title {
+  font-size: 32px;
+  line-height: 100%;
+  font-weight: 700;
+  color: #EA580C;
+}
