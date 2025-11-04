@@ -1,0 +1,110 @@
+.card {
+  width: 384px;
+  height: fit-content;
+  border-radius: 16px;
+  box-shadow: 0 2px 4px #E5E7EB;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.card-image {
+  height: 192px;
+}
+
+.card-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title {
+  height: 32px;
+  font-size: 24px;
+  line-height: 100%;
+  font-weight: 700;
+  color: #111827;
+}
+
+.description {
+  height: 40px;
+  font-size: 14px;
+  line-height: 100%;
+  font-weight: 400;
+  color: #4B5563;
+}
+
+.stats {
+  margin-top: 8px;
+  height: 20px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.stats-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.stats-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.stats-title {
+  font-size: 14px;
+  line-height: 100%;
+  font-weight: 400;
+  color: #374151;
+}
+
+.line {
+  margin-top: 8px;
+  border-top: 1px solid #b7b8ba;
+}
+
+.ingredients {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ingredients-title {
+  font-size: 16px;
+  line-height: 100%;
+  font-weight: 700;
+  color: #111827;
+}
+
+.ingredients-list {
+  height: 56px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ingredient {
+  padding-inline: 12px;
+  height: 24px;
+  border-radius: 8px;
+  align-content: center;
+  background: #FFF7ED;
+  font-size: 12px;
+  line-height: 100%;
+  font-weight: 400;
+  color: #C2410C;
+}
+
+.button {
+  height: 40px;
+  background: #F97316;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 100%;
+  color: #ffffff;
+  cursor: pointer;
+}
