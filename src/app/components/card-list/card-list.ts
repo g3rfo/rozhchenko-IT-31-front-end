@@ -1,72 +1,114 @@
 import { Component } from '@angular/core';
-import { DishCard } from "../card/card";
+import { CommonModule } from '@angular/common';
+import { DishCard } from "../../shared/models/dish-card";
+import { Card } from '../card/card';
 
 @Component({
   selector: 'app-card-list',
   templateUrl: './card-list.html',
-  styleUrl: './card-list.css'
+  styleUrl: './card-list.css',
+  imports: [CommonModule, Card]
 })
+
 export class CardList {
   items: DishCard[] = [
     {
       title: 'Classic Margherita Pizza',
-      imgUrl: '',
+      imgName: 'Card01.png',
       description: 'A traditional Italian pizza with fresh mozzarella, tomatoes, and basil on a crispy thin crust.',
       cookingTime: 25,
       complexity: 'Easy',
       servingFor: 4,
       ingredients: ['Pizza Dough', 'Tomato Sause', 'Mozzarella', 'Fresh Basil'],
-      recipe: ''
+      recipe: `
+        1.Preheat your oven to 250°C (480°F) with a pizza stone inside.
+        2.Roll out the pizza dough into a thin circle.
+        3.Spread a thin layer of tomato sauce evenly.
+        4.Add slices of mozzarella and a few fresh basil leaves.
+        5.Bake for 7-10 minutes until the crust is golden and cheese is bubbling.
+        6.Drizzle with olive oil and serve hot.
+      `
     },
     {
       title: 'Creamy Pasta Carbonara',
-      imgUrl: '',
+      imgName: 'Card02.png',
       description: 'Rich and creamy Italian pasta with crispy pancetta, eggs, and parmesan cheese.',
       cookingTime: 20,
       complexity: 'Medium',
       servingFor: 2,
-      ingredients: ['Spaghetti', 'Pancetta', 'Eggs', 'Parmesan'],
-      recipe: ''
+      ingredients: ['Spaghetti', 'Pancetta', 'Eggs', 'Parmesan', 'Paper'],
+      recipe: `
+        1.Cook the spaghetti in salted water until al dente.
+        2.In a pan, cook pancetta until crispy. Remove from heat.
+        3.Whisk eggs, grated parmesan, and black pepper in a bowl.
+        4.Drain pasta (reserve a little water), then toss with pancetta.
+        5.Remove from heat and quickly mix in the egg mixture — use the residual heat to make a creamy sauce (don't scramble the eggs!).
+        6.Add a splash of pasta water if needed, and serve immediately.
+      `
     },
     {
       title: 'Grilled Salmon with Lemon',
-      imgUrl: '',
+      imgName: 'Card03.png',
       description: 'Perfectly grilled salmon fillet with a zesty lemon butter sauce and fresh herbs.',
       cookingTime: 15,
       complexity: 'Easy',
       servingFor: 2,
-      ingredients: ['Salmon Fillet', 'Lemon', 'Butter', 'Dill'],
-      recipe: ''
+      ingredients: ['Salmon Fillet', 'Lemon', 'Butter', 'Dill', 'Herbs'],
+      recipe: `
+        1.Preheat your grill or pan to medium heat.
+        2.Season the salmon fillets with salt and pepper.
+        3.Grill each side for 3-4 minutes, until flaky.
+        4.In a small saucepan, melt butter with lemon juice, dill, and herbs.
+        5.Pour the sauce over the grilled salmon and serve with steamed vegetables or rice.
+      `
     },
     {
       title: 'Chicken Tikka Masala',
-      imgUrl: '',
+      imgName: 'Card04.png',
       description: 'Tender chicken pieces in a creamy, spiced tomato sauce served with basmati rice.',
       cookingTime: 45,
       complexity: 'Medium',
       servingFor: 4,
-      ingredients: ['Chicken', 'Yogurt', 'Tomatoes', 'Cream'],
-      recipe: ''
+      ingredients: ['Chicken', 'Yogurt', 'Tomatoes', 'Cream', 'Rise', 'Parsley'],
+      recipe: `
+        1.Marinate chicken in yogurt and spices (cumin, coriander, paprika) for at least 30 minutes.
+        2.Grill or sauté the chicken until lightly charred.
+        3.In a pan, cook chopped tomatoes with garlic, ginger, and spices.
+        4.Add cream and the cooked chicken. Simmer for 10-15 minutes.
+        5.Serve with basmati rice, garnished with fresh parsley.
+      `
     },
     {
       title: 'Chocolate Lava Cake',
-      imgUrl: '',
+      imgName: 'Card05.png',
       description: 'Decadent chocolate cake with a gooey molten center, served warm with vanilla ice cream.',
       cookingTime: 30,
       complexity: 'Hard',
       servingFor: 4,
-      ingredients: ['Dark Chocolate', 'Butter', 'Eggs', 'Sugar'],
-      recipe: ''
+      ingredients: ['Dark Chocolate', 'Ice Cream', 'Butter', 'Eggs', 'Sugar'],
+      recipe: `
+        1.Melt dark chocolate and butter together until smooth.
+        2.Whisk in sugar and eggs until fluffy.
+        3.Pour into greased ramekins, filling ¾ full.
+        4.Bake at 200°C (400°F) for 10-12 minutes — the center should stay soft.
+        5.Serve immediately with a scoop of vanilla ice cream.
+      `
     },
     {
      title: 'Fresh Garden Salad',
-      imgUrl: '',
+      imgName: 'Card06.png',
       description: 'Crisp mixed greens with cherry tomatoes, cucumber, and a light vinaigrette dressing.',
       cookingTime: 10,
       complexity: 'Easy',
       servingFor: 2,
-      ingredients: ['Mixed Greens', 'Tomatoes', 'Cucumbers', 'Olive Oil'],
-      recipe: ''
+      ingredients: ['Mixed Greens', 'Tomatoes', 'Cucumbers', 'Avocado', 'Onion', 'Chickpeas', 'Olive Oil'],
+      recipe: `
+        1.Wash and dry mixed greens.
+        2.Dice tomatoes, cucumbers, avocado, and thinly slice onion.
+        3.Add chickpeas for protein.
+        4.Whisk olive oil, lemon juice, salt, and pepper for dressing.
+        5.Toss everything together and serve chilled.
+      `
     }
   ];
 }
