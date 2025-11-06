@@ -1,34 +1,63 @@
 <div class="card">
   <div class="card-image">
-    <img src="images/CardImg.png" alt="">
+    <img
+      (click)="isRecipeOpen = true"
+      class="scale-on-hover"
+      [src]="'images/' + item.imgName"
+      [alt]="item.title + ' image'"
+    >
   </div>
   <div class="card-content">
-    <h1 class="title">Classic Margherita Pizza</h1>
-    <p class="description">A traditional Italian pizza with fresh mozzarella, tomatoes, and basil on a crispy thin crust.</p>
+    <h1 class="title">{{ item.title }}</h1>
+    <p class="description">{{ item.description }}</p>
     <div class="stats">
       <div class="stats-item">
         <img class="stats-icon" src="icons/TimeIcon.svg" alt="">
-        <h2 class="stats-title">25 mins</h2>
+        <h2 class="stats-title">{{ item.cookingTime }} mins</h2>
       </div>
       <div class="stats-item">
         <img class="stats-icon" src="icons/CookingHatIcon.svg" alt="">
-        <h2 class="stats-title">Easy</h2>
+        <h2 class="stats-title">{{ item.complexity }}</h2>
       </div>
       <div class="stats-item">
         <img class="stats-icon" src="icons/PeopleIcon.svg" alt="">
-        <h2 class="stats-title">4 servings</h2>
+        <h2 class="stats-title">{{ item.servingFor }} servings</h2>
       </div>
     </div>
     <div class="line"></div>
     <div class="ingredients">
       <h2 class="ingredients-title">Key ingredients:</h2>
       <div class="ingredients-list">
-        <div class="ingredient">Pizza Dough</div>
-        <div class="ingredient">Tomato Sause</div>
-        <div class="ingredient">Mozzarella</div>
-        <div class="ingredient">Fresh Basil</div>
+        <div
+          class="ingredient"
+          *ngFor="let ingredient of item.ingredients | slice:0:4"
+        >
+          {{ ingredient }}
+        </div>
+        <div
+          class="ingredient leftIngredients"
+          *ngIf="item.ingredients.length > 4"
+        >
+          +{{ item.ingredients.length - 4 }} more
+        </div>
       </div>
     </div>
-    <button class="button">View Recipe</button>
+    <button
+      class="view-recipe-button scale-on-hover"
+      (click)="isRecipeOpen = true"
+    >View Recipe</button>
+  </div>
+  <div
+    class="recipe"
+    [ngClass]="{ 'opened' : isRecipeOpen }"
+  >
+    <button
+      class="close-button scale-on-hover"
+      (click)="isRecipeOpen = false"
+    >
+      <img class="close-icon" src="icons/CloseIcon.svg" alt="">
+    </button>
+    <h1 class="title">{{ item.title }}</h1>
+    <p class="description">{{ item.recipe }}</p>
   </div>
 </div>

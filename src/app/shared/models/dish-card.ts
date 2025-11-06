@@ -1,6 +1,6 @@
 export interface DishCard {
   title: string;
-  imgUrl: string;
+  imgName: string;
   description: string;
   cookingTime: number;
   complexity: 'Easy' | 'Medium' | 'Hard';
