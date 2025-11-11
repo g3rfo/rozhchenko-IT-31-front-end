@@ -1,0 +1,38 @@
+<div class="filter-bar">
+  <input
+    class="input"
+    type="text"
+    id="filter-bar-input"
+    placeholder="Search recipes..."
+    [(ngModel)]="searchInput"
+    (ngModelChange)="searchInputChange.emit(searchInput)"
+  >
+  <select
+    class="select select-diff"
+    id="difficulty"
+    [(ngModel)]="selectedDifficulty"
+    (ngModelChange)="selectedDifficultyChange.emit(selectedDifficulty)"
+  >
+    <option
+      class="option"
+      *ngFor="let difficulty of difficulties"
+      [value]="difficulty"
+    >
+      {{difficulty}}
+    </option>
+  </select>
+  <select
+    class="select select-time"
+    id="cook-time"
+    [(ngModel)]="selectedCookTime"
+    (ngModelChange)="selectedCookTimeChange.emit(selectedCookTime)"
+  >
+    <option
+      class="option"
+      *ngFor="let cookTime of cookTimes"
+      [value]="cookTime"
+    >
+      {{cookTime}}
+    </option>
+  </select>
+</div>

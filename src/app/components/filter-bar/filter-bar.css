@@ -1,0 +1,42 @@
+.filter-bar {
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1216px;
+  height: 100px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 2px 4px #E5E7EB;
+  box-sizing: border-box;
+}
+
+.input, .select {
+  height: 52px;
+  border-radius: 8px;
+  border: #E2E5E9 1px solid;
+  box-sizing: border-box;
+  font-size: 20px;
+  line-height: 150%;
+  outline: none;
+}
+
+.input {
+  padding-inline: 16px;
+  width: 780px;
+}
+
+.input:focus {
+  outline: #F97316 3px solid;
+}
+
+.select {
+  width: 180px;
+  padding-left: 16px;
+  cursor: pointer;
+}
+
+.option {
+  border-radius: 8px;
+  border: #E2E5E9 1px solid;
+}

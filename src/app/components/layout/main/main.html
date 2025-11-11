@@ -3,5 +3,14 @@
     <h1 class="title">Discover Amazing Recipes</h1>
     <p class="description">From quick weeknight dinners to impressive desserts</p>
   </div>
-  <app-card-list></app-card-list>
+  <app-filter-bar
+    [(searchInput)]="sharedText"
+    [(selectedDifficulty)]="selectedDifficulty"
+    [(selectedCookTime)]="selectedCookTime"
+  ></app-filter-bar>
+  <app-card-list
+    [searchInput]="sharedText"
+    [selectedDifficulty]="selectedDifficulty"
+    [selectedCookTime]="selectedCookTime"
+  ></app-card-list>
 </main>
