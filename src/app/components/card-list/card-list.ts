@@ -13,6 +13,7 @@ import { Card } from '../card/card';
 export class CardList {
   items: DishCard[] = [
     {
+      id: 1,
       title: 'Classic Margherita Pizza',
       imgName: 'Card01.png',
       description: 'A traditional Italian pizza with fresh mozzarella, tomatoes, and basil on a crispy thin crust.',
@@ -30,6 +31,7 @@ export class CardList {
       `
     },
     {
+      id: 2,
       title: 'Creamy Pasta Carbonara',
       imgName: 'Card02.png',
       description: 'Rich and creamy Italian pasta with crispy pancetta, eggs, and parmesan cheese.',
@@ -47,6 +49,7 @@ export class CardList {
       `
     },
     {
+      id: 3,
       title: 'Grilled Salmon with Lemon',
       imgName: 'Card03.png',
       description: 'Perfectly grilled salmon fillet with a zesty lemon butter sauce and fresh herbs.',
@@ -63,6 +66,7 @@ export class CardList {
       `
     },
     {
+      id: 4,
       title: 'Chicken Tikka Masala',
       imgName: 'Card04.png',
       description: 'Tender chicken pieces in a creamy, spiced tomato sauce served with basmati rice.',
@@ -79,6 +83,7 @@ export class CardList {
       `
     },
     {
+      id: 5,
       title: 'Chocolate Lava Cake',
       imgName: 'Card05.png',
       description: 'Decadent chocolate cake with a gooey molten center, served warm with vanilla ice cream.',
@@ -95,7 +100,8 @@ export class CardList {
       `
     },
     {
-     title: 'Fresh Garden Salad',
+      id: 6,
+      title: 'Fresh Garden Salad',
       imgName: 'Card06.png',
       description: 'Crisp mixed greens with cherry tomatoes, cucumber, and a light vinaigrette dressing.',
       cookingTime: 10,
@@ -111,4 +117,10 @@ export class CardList {
       `
     }
   ];
+
+  openedCardId : number | null = null;
+
+  getNewOpenedCardId(id : number | null) : void {
+    this.openedCardId = id;
+  }
 }
