@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DishCard } from '../../shared/models/dish-card';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -114,7 +114,52 @@ export class Data {
     }
   ];
 
+  private itemsSubject = new BehaviorSubject<DishCard[]>(this.dishes);
+  items$ = this.itemsSubject.asObservable();
+
+  private searchText: string = '';
+  private difficulty: string = 'All Difficulties';
+  private cookTime: string = 'All Cook Times';
+
+  constructor() {}
+
   getItems() : Observable<DishCard[]> {
     return of(this.dishes);
+  }
+
+  updateSearch(text: string) {
+    this.searchText = text.toLowerCase().trim();
+    this.applyFilters();
+  }
+
+  updateDifficulty(diff: string) {
+    this.difficulty = diff;
+    this.applyFilters();
+  }
+
+  updateCookTime(time: string) {
+    this.cookTime = time;
+    this.applyFilters();
+  }
+
+  private applyFilters() {
+    let filtered = this.dishes.filter(item => {
+      const matchesText =
+        !this.searchText || item.title.toLowerCase().includes(this.searchText);
+
+      const matchesDifficulty =
+        this.difficulty === 'All Difficulties' ||
+        item.complexity === this.difficulty;
+
+      const matchesCookTime =
+        this.cookTime === 'All Cook Times' ||
+        (this.cookTime === 'Under 20 min' && item.cookingTime < 20) ||
+        (this.cookTime === '20-40 min' && item.cookingTime >= 20 && item.cookingTime <= 40) ||
+        (this.cookTime === 'Over 40 min' && item.cookingTime > 40);
+
+      return matchesText && matchesDifficulty && matchesCookTime;
+    });
+
+    this.itemsSubject.next(filtered);
   }
 }

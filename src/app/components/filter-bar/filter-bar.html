@@ -5,13 +5,13 @@
     id="filter-bar-input"
     placeholder="Search recipes..."
     [(ngModel)]="searchInput"
-    (ngModelChange)="searchInputChange.emit(searchInput)"
+    (ngModelChange)="onSearchChange()"
   >
   <select
     class="select select-diff"
     id="difficulty"
     [(ngModel)]="selectedDifficulty"
-    (ngModelChange)="selectedDifficultyChange.emit(selectedDifficulty)"
+    (ngModelChange)="onDifficultyChange()"
   >
     <option
       class="option"
@@ -25,7 +25,7 @@
     class="select select-time"
     id="cook-time"
     [(ngModel)]="selectedCookTime"
-    (ngModelChange)="selectedCookTimeChange.emit(selectedCookTime)"
+    (ngModelChange)="onCookTimeChange()"
   >
     <option
       class="option"

@@ -1,6 +1,6 @@
 <div class="card-list">
   <app-card
-    *ngFor="let item of getFilteredItems()"
+    *ngFor="let item of items"
     [item]="item"
     [openedCardId]="openedCardId"
     (id)="getNewOpenedCardId($event)"

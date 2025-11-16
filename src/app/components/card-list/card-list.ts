@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DishCard } from "../../shared/models/dish-card";
 import { Card } from '../card/card';
@@ -20,36 +20,13 @@ export class CardList implements OnInit {
   constructor(private dataServise: Data) {}
 
   ngOnInit(): void {
-    this.dataSub = this.dataServise.getItems().subscribe(res => {
+    this.dataSub = this.dataServise.items$.subscribe(res => {
       this.items = res;
     })
   }
 
-  // handle filtering
-  @Input() searchInput! : string;
-  @Input() selectedDifficulty!: string;
-  @Input() selectedCookTime!: string;
-
-  getFilteredItems(): DishCard[] {
-    const input = (this.searchInput || '').trim().toLowerCase();
-    const difficulty = this.selectedDifficulty || 'All Difficulties';
-    const cookTime = this.selectedCookTime || 'All Cook Times';
-
-    return this.items.filter(item => {
-      const matchesText =
-        !input || item.title.toLowerCase().includes(input);
-
-      const matchesDifficulty =
-        difficulty === 'All Difficulties' || item.complexity === difficulty;
-
-      const matchesCookTime =
-        cookTime === 'All Cook Times' ||
-        (cookTime === 'Under 20 min' && item.cookingTime < 20) ||
-        (cookTime === '20-40 min' && item.cookingTime >= 20 && item.cookingTime <= 40) ||
-        (cookTime === 'Over 40 min' && item.cookingTime > 40);
-
-      return matchesText && matchesDifficulty && matchesCookTime;
-    });
+  ngOnDestroy(): void {
+    this.dataSub.unsubscribe();
   }
 
   // handle card recipe opening

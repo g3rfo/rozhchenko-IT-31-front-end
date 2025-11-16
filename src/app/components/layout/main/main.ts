@@ -9,7 +9,5 @@ import { FilterBar } from '../../filter-bar/filter-bar';
   styleUrl: './main.css'
 })
 export class Main {
-  sharedText : string = '';
-  selectedDifficulty: string = 'All Difficulties'; 
-  selectedCookTime: string = 'All Cook Times';
+
 }
