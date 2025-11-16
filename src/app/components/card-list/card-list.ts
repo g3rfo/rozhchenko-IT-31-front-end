@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DishCard } from "../../shared/models/dish-card";
 import { Card } from '../card/card';
 import { Data } from '../../services/data/data';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-card-list',
@@ -14,13 +15,15 @@ import { Data } from '../../services/data/data';
 export class CardList implements OnInit {
   // handle cards data
   items: DishCard[] = [];
+  private dataSub!: Subscription;
 
   constructor(private dataServise: Data) {}
 
   ngOnInit(): void {
-    this.items = this.dataServise.getItems();
+    this.dataSub = this.dataServise.getItems().subscribe(res => {
+      this.items = res;
+    })
   }
-
 
   // handle filtering
   @Input() searchInput! : string;

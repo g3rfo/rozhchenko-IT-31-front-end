@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DishCard } from '../../shared/models/dish-card';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -113,7 +114,7 @@ export class Data {
     }
   ];
 
-  getItems() : DishCard[] {
-    return this.dishes;
+  getItems() : Observable<DishCard[]> {
+    return of(this.dishes);
   }
 }
