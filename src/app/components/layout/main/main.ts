@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { CardList } from "../../card-list/card-list";
+import { FilterBar } from '../../filter-bar/filter-bar';
 
 @Component({
   selector: 'app-main',
-  imports: [CardList],
+  imports: [FilterBar, CardList],
   templateUrl: './main.html',
   styleUrl: './main.css'
 })

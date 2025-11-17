@@ -1,4 +1,5 @@
 export interface DishCard {
+  id: number;
   title: string;
   imgName: string;
   description: string;
