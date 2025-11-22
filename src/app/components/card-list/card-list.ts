@@ -1,9 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DishCard } from "../../shared/models/dish-card";
 import { Card } from '../card/card';
 import { Data } from '../../services/data/data';
-import { Subscription } from 'rxjs';
+import { Observable } from 'rxjs';
 import { NotFoundMessage } from "../not-found-message/not-found-message";
 
 @Component({
@@ -13,20 +13,10 @@ import { NotFoundMessage } from "../not-found-message/not-found-message";
   imports: [CommonModule, Card, NotFoundMessage]
 })
 
-export class CardList implements OnInit {
-  // handle cards data
-  items: DishCard[] = [];
-  private dataSub!: Subscription;
+export class CardList {
+  items$!: Observable<DishCard[]>;
 
-  constructor(private dataServise: Data) {}
-
-  ngOnInit(): void {
-    this.dataSub = this.dataServise.items$.subscribe(res => {
-      this.items = res;
-    })
-  }
-
-  ngOnDestroy(): void {
-    this.dataSub.unsubscribe();
+  constructor(private dataServise: Data) {
+    this.items$ = this.dataServise.items$;
   }
 }
