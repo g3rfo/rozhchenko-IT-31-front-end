@@ -27,18 +27,21 @@
     <div class="line"></div>
     <div class="ingredients">
       <h2 class="ingredients-title">Key ingredients:</h2>
-      <div class="ingredients-list">
+      <div
+        class="ingredients-list"
+        *ngIf="item.ingredients | ingredientsList as ingredients"
+      >
         <div
           class="ingredient"
-          *ngFor="let ingredient of item.ingredients | slice:0:4"
+          *ngFor="let ingredient of ingredients.visible"
         >
           {{ ingredient }}
         </div>
         <div
           class="ingredient leftIngredients"
-          *ngIf="item.ingredients.length > 4"
+          *ngIf="ingredients.restCount > 0"
         >
-          +{{ item.ingredients.length - 4 }} more
+          +{{ ingredients.restCount }} more
         </div>
       </div>
     </div>

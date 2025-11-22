@@ -40,7 +40,7 @@ export class Data {
         2.In a pan, cook pancetta until crispy. Remove from heat.
         3.Whisk eggs, grated parmesan, and black pepper in a bowl.
         4.Drain pasta (reserve a little water), then toss with pancetta.
-        5.Remove from heat and quickly mix in the egg mixture — use the residual heat to make a creamy sauce (don't scramble the eggs!).
+        5.Remove from heat and quickly mix in the egg mixture - use the residual heat to make a creamy sauce (don't scramble the eggs!).
         6.Add a splash of pasta water if needed, and serve immediately.
       `
     },
@@ -91,7 +91,7 @@ export class Data {
         1.Melt dark chocolate and butter together until smooth.
         2.Whisk in sugar and eggs until fluffy.
         3.Pour into greased ramekins, filling ¾ full.
-        4.Bake at 200°C (400°F) for 10-12 minutes — the center should stay soft.
+        4.Bake at 200°C (400°F) for 10-12 minutes - the center should stay soft.
         5.Serve immediately with a scoop of vanilla ice cream.
       `
     },
