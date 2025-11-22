@@ -1,4 +1,4 @@
-<div class="card-list">
+<div class="card-list" *ngIf="items$ | async as items">
   <app-not-found-message
     *ngIf="items.length === 0"
   ></app-not-found-message>
