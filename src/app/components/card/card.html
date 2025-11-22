@@ -2,7 +2,7 @@
   <div class="card-image">
     <img
       [routerLink]="['/items', item.id]"
-      class="scale-on-hover"
+      scaleOnHover
       [src]="'images/' + item.imgName"
       [alt]="item.title + ' image'"
     >
@@ -46,7 +46,8 @@
       </div>
     </div>
     <button
-      class="view-recipe-button scale-on-hover"
+      class="view-recipe-button"
+      scaleOnHover
       [routerLink]="['/items', item.id]"
     >View Recipe</button>
   </div>

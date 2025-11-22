@@ -121,11 +121,3 @@
   color: #ffffff;
   cursor: pointer;
 }
-
-.scale-on-hover {
-  transition: transform 0.2s ease;
-}
-
-.scale-on-hover:hover {
-  transform: scale(1.1);
-}
