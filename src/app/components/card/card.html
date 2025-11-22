@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-image">
     <img
-      (click)="onRecipeOpen()"
+      [routerLink]="['/items', item.id]"
       class="scale-on-hover"
       [src]="'images/' + item.imgName"
       [alt]="item.title + ' image'"
@@ -44,20 +44,7 @@
     </div>
     <button
       class="view-recipe-button scale-on-hover"
-      (click)="onRecipeOpen()"
+      [routerLink]="['/items', item.id]"
     >View Recipe</button>
-  </div>
-  <div
-    class="recipe"
-    [ngClass]="{ 'opened' : isRecipeOpen }"
-  >
-    <button
-      class="close-button scale-on-hover"
-      (click)="onRecipeClose()"
-    >
-      <img class="close-icon" src="icons/CloseIcon.svg" alt="">
-    </button>
-    <h1 class="title">{{ item.title }}</h1>
-    <p class="description">{{ item.recipe }}</p>
   </div>
 </div>
