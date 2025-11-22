@@ -4,7 +4,7 @@ html {
   font-family: 'Inter', Arial, sans-serif;
 }
 
-body, h1, h2, p {
+body, h1, h2, p, input {
   margin: 0;
   padding: 0;
 }

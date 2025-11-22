@@ -21,7 +21,8 @@ export class CardDetails {
   ) {}
 
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = String(this.route.snapshot.paramMap.get('id'));
+    console.log(id);
     const dish = this.dataService.getItemById(id);
 
     if (!dish) {
@@ -33,7 +34,7 @@ export class CardDetails {
   }
 
   onClose() : void {
-    this.router.navigate(['/items']);
+    this.router.navigate(['/dishes']);
     return;
   }
 }

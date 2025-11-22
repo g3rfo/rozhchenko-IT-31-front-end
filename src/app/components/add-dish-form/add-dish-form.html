@@ -1,0 +1,60 @@
+<h1 class="title">Add New Dish</h1>
+<form
+  [formGroup]="dishForm"
+  (ngSubmit)="onSubmit()"
+  class="add-dish-form"
+>
+  <div class="field">
+    <label class="label">Image URL</label>
+    <input type="url" formControlName="imgName" class="input">
+    <div class="error" *ngIf="f['imgName'].touched && f['imgName'].invalid">Image URL is required</div>
+  </div>
+
+  <div class="field">
+    <label class="label">Title</label>
+    <input type="text" formControlName="title" class="input">
+    <div class="error" *ngIf="f['title'].touched && f['title'].invalid">Title is required</div>
+  </div>
+
+  <div class="field">
+    <label class="label">Description</label>
+    <textarea formControlName="description" class="input description"></textarea>
+    <div class="error" *ngIf="f['description'].touched && f['description'].invalid">Description is required</div>
+  </div>
+
+  <div class="stats">
+    <div class="field">
+      <label class="label">Cooking Time (mins)</label>
+      <input type="number" min="5" formControlName="cookingTime" class="input cooking-time">
+      <div class="error" *ngIf="f['cookingTime'].touched && f['cookingTime'].invalid">Enter valid cooking time</div>
+    </div>
+    <div class="field">
+      <label class="label">Complexity</label>
+      <select formControlName="complexity" class="input complexity">
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+      </select>
+      <div class="error" *ngIf="f['complexity'].touched && f['complexity'].invalid">Select complexity</div>
+    </div>
+    <div class="field">
+      <label class="label">Serving For</label>
+      <input type="number" min="1" formControlName="servingFor" class="input serving-for">
+      <div class="error" *ngIf="f['servingFor'].touched && f['servingFor'].invalid">Enter number of servings</div>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Ingredients (comma-separated)</label>
+    <input type="text" formControlName="ingredients" class="input">
+    <div class="error" *ngIf="f['ingredients'].touched && f['ingredients'].invalid">Enter ingredients</div>
+  </div>
+
+  <div class="field">
+    <label class="label">Recipe</label>
+    <textarea formControlName="recipe" class="input recipe"></textarea>
+    <div class="error" *ngIf="f['recipe'].touched && f['recipe'].invalid">Recipe is required</div>
+  </div>
+
+  <button type="submit" class="submit-btn" scaleOnHover>Add Dish</button>
+</form>
