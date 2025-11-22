@@ -22,15 +22,19 @@ export class CardDetails {
 
   ngOnInit(): void {
     const id = String(this.route.snapshot.paramMap.get('id'));
-    console.log(id);
-    const dish = this.dataService.getItemById(id);
 
-    if (!dish) {
-      this.router.navigate(['not-found-render'], { skipLocationChange: true })
-      return;
-    }
-
-    this.item = dish;
+    this.dataService.getItemById(id).subscribe({
+      next: dish => {
+        if (!dish) {
+          this.router.navigate(['not-found-render'], { skipLocationChange: true });
+          return;
+        }
+        this.item = dish;
+      },
+      error: () => {
+        this.router.navigate(['not-found-render'], { skipLocationChange: true });
+      }
+    });
   }
 
   onClose() : void {

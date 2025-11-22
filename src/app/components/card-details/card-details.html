@@ -1,8 +1,8 @@
-<div class="card-details">
+<div class="card-details" *ngIf="item">
   <div class="card">
     <div class="card-image">
       <img
-        [src]="'images/' + item.imgName"
+        [src]="item.imgUrl"
         [alt]="item.title + ' image'"
       >
     </div>
@@ -46,6 +46,6 @@
       <img class="close-icon" src="icons/CloseIcon.svg" alt="">
     </button>
     <h1 class="title">{{ item.title }}</h1>
-    <p class="description">{{ item.recipe }}</p>
+    <p class="recipe-description" [innerHTML]="item.recipe"></p>
   </div>
 </div>
