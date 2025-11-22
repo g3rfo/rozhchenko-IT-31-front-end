@@ -4,12 +4,13 @@ import { DishCard } from "../../shared/models/dish-card";
 import { Card } from '../card/card';
 import { Data } from '../../services/data/data';
 import { Subscription } from 'rxjs';
+import { NotFoundMessage } from "../not-found-message/not-found-message";
 
 @Component({
   selector: 'app-card-list',
   templateUrl: './card-list.html',
   styleUrl: './card-list.css',
-  imports: [CommonModule, Card]
+  imports: [CommonModule, Card, NotFoundMessage]
 })
 
 export class CardList implements OnInit {
@@ -27,12 +28,5 @@ export class CardList implements OnInit {
 
   ngOnDestroy(): void {
     this.dataSub.unsubscribe();
-  }
-
-  // handle card recipe opening
-  openedCardId : number | null = null;
-
-  getNewOpenedCardId(id : number | null) : void {
-    this.openedCardId = id;
   }
 }

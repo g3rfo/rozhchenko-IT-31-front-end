@@ -7,7 +7,7 @@ import { Main } from "./main/main";
   selector: 'app-layout',
   templateUrl: './layout.html',
   styleUrls: ['./layout.css'],
-  imports: [Header, Footer,  Main]
+  imports: [Header, Footer, Main]
 })
 
 export class LayoutComponent {}

@@ -1,8 +1,9 @@
 <div class="card-list">
+  <app-not-found-message
+    *ngIf="items.length === 0"
+  ></app-not-found-message>
   <app-card
     *ngFor="let item of items"
     [item]="item"
-    [openedCardId]="openedCardId"
-    (id)="getNewOpenedCardId($event)"
   ></app-card>
 </div>

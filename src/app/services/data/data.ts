@@ -123,6 +123,10 @@ export class Data {
 
   constructor() {}
 
+  getItemById(id: number): DishCard | undefined {
+    return this.dishes.find(d => d.id === id);
+  }
+
   getItems() : Observable<DishCard[]> {
     return of(this.dishes);
   }

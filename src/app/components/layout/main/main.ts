@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { CardList } from "../../card-list/card-list";
 import { FilterBar } from '../../filter-bar/filter-bar';
+import { RouterOutlet } from "@angular/router";
 
 @Component({
   selector: 'app-main',
-  imports: [FilterBar, CardList],
+  imports: [FilterBar, RouterOutlet],
   templateUrl: './main.html',
   styleUrl: './main.css'
 })
