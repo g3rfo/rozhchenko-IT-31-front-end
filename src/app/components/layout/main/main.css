@@ -5,7 +5,6 @@
   background: #FFF7ED;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   box-sizing: border-box;
 }

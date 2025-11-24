@@ -1,4 +1,15 @@
 <div class="navbar">
   <a class="link" [routerLink]="['/dishes']">Dishes</a>
   <a class="link" [routerLink]="['/add-dish']">Add Dish</a>
+  <a
+    class="link"
+    [routerLink]="['/auth']"
+    *ngIf="!isAuth"
+  >Sign in / Sing up</a>
+  <a
+    class="link"
+    [routerLink]="['/dishes']"
+    *ngIf="isAuth"
+    (click)="logout()"
+  >Log out</a>
 </div>
