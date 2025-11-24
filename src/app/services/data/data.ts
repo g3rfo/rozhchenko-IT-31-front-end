@@ -9,7 +9,7 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 export class Data {
   private dishes: DishCard[] = [
     {
-      id: 1,
+      id: 'classic-margherite-pizza',
       title: 'Classic Margherita Pizza',
       imgName: 'Card01.png',
       description: 'A traditional Italian pizza with fresh mozzarella, tomatoes, and basil on a crispy thin crust.',
@@ -27,7 +27,7 @@ export class Data {
       `
     },
     {
-      id: 2,
+      id: 'creamy-pasta-carbonara',
       title: 'Creamy Pasta Carbonara',
       imgName: 'Card02.png',
       description: 'Rich and creamy Italian pasta with crispy pancetta, eggs, and parmesan cheese.',
@@ -45,7 +45,7 @@ export class Data {
       `
     },
     {
-      id: 3,
+      id: 'grilled-salmon-with-lemon',
       title: 'Grilled Salmon with Lemon',
       imgName: 'Card03.png',
       description: 'Perfectly grilled salmon fillet with a zesty lemon butter sauce and fresh herbs.',
@@ -62,7 +62,7 @@ export class Data {
       `
     },
     {
-      id: 4,
+      id: 'chicken-tikka-masala',
       title: 'Chicken Tikka Masala',
       imgName: 'Card04.png',
       description: 'Tender chicken pieces in a creamy, spiced tomato sauce served with basmati rice.',
@@ -79,7 +79,7 @@ export class Data {
       `
     },
     {
-      id: 5,
+      id: 'chocolate-lava-cake',
       title: 'Chocolate Lava Cake',
       imgName: 'Card05.png',
       description: 'Decadent chocolate cake with a gooey molten center, served warm with vanilla ice cream.',
@@ -96,7 +96,7 @@ export class Data {
       `
     },
     {
-      id: 6,
+      id: 'fresh-garden-salad',
       title: 'Fresh Garden Salad',
       imgName: 'Card06.png',
       description: 'Crisp mixed greens with cherry tomatoes, cucumber, and a light vinaigrette dressing.',
@@ -123,7 +123,12 @@ export class Data {
 
   constructor() {}
 
-  getItemById(id: number): DishCard | undefined {
+  addDish(dish: DishCard) {
+    dish.id = dish.title.trim().toLowerCase().replace(/\s+/g, '-');
+    this.dishes.push(dish);
+  }
+
+  getItemById(id: string): DishCard | undefined {
     return this.dishes.find(d => d.id === id);
   }
 

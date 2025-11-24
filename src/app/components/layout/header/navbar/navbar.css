@@ -1,0 +1,21 @@
+.navbar {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.link {
+  font-size: 20px;
+  line-height: 150%;
+  font-weight: 400;
+  color: #4B5563;
+  text-decoration: none;
+}
+
+.link:active {
+  color: #4B5563;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
