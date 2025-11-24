@@ -18,12 +18,12 @@ export class AddDishForm {
   constructor(private dataService: Data, private router: Router) {
     this.dishForm = new FormGroup({
       title: new FormControl('', Validators.required),
-      imgName: new FormControl('', Validators.required),
+      imgUrl: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
       cookingTime: new FormControl('', [Validators.required, Validators.min(1)]),
       complexity: new FormControl('', Validators.required),
       servingFor: new FormControl('', [Validators.required, Validators.min(1)]),
-      ingredients: new FormControl('', Validators.required), // can be comma-separated
+      ingredients: new FormControl('', Validators.required),
       recipe: new FormControl('', Validators.required)
     });
   }
@@ -43,7 +43,7 @@ export class AddDishForm {
     const newDish: DishCard = {
       id: '',
       title: formValue.title,
-      imgName: formValue.imgName,
+      imgUrl: formValue.imgUrl,
       description: formValue.description,
       cookingTime: +formValue.cookingTime,
       complexity: formValue.complexity,
@@ -52,7 +52,9 @@ export class AddDishForm {
       recipe: formValue.recipe
     };
 
-    this.dataService.addDish(newDish);
-    this.router.navigate(['/dishes']);
+    this.dataService.addDish(newDish).subscribe({
+      next: () => this.router.navigate(['/dishes']),
+      error: (err) => console.error('Failed to add dish', err)
+    });
   }
 }

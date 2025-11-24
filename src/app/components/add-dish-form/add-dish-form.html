@@ -5,15 +5,15 @@
   class="add-dish-form"
 >
   <div class="field">
-    <label class="label">Image URL</label>
-    <input type="url" formControlName="imgName" class="input">
-    <div class="error" *ngIf="f['imgName'].touched && f['imgName'].invalid">Image URL is required</div>
-  </div>
-
-  <div class="field">
     <label class="label">Title</label>
     <input type="text" formControlName="title" class="input">
     <div class="error" *ngIf="f['title'].touched && f['title'].invalid">Title is required</div>
+  </div>
+
+  <div class="field">
+    <label class="label">Image URL(Base64)</label>
+    <input type="url" formControlName="imgUrl" class="input">
+    <div class="error" *ngIf="f['imgUrl'].touched && f['imgUrl'].invalid">Image URL is required</div>
   </div>
 
   <div class="field">
