@@ -1,4 +1,13 @@
 {
+  "users": [
+    {
+      "id": "68a2",
+      "name": "Ivan",
+      "surname": "Rozhchenko",
+      "email": "rozhchenkoivan@gmail.com",
+      "password": "12345678"
+    }
+  ],
   "dishes": [
     {
       "id": "classic-margherite-pizza",
@@ -144,6 +153,22 @@
         "fk"
       ],
       "recipe": "hfdhfd khl dhjf dkhdjf lkhdfj khlf "
+    },
+    {
+      "id": "dish-from-authorized-user",
+      "title": "Dish from authorized user",
+      "imgUrl": "1",
+      "description": "description",
+      "cookingTime": 30,
+      "complexity": "Medium",
+      "servingFor": 4,
+      "ingredients": [
+        "ing1",
+        "ing2",
+        "ing3",
+        "ing4"
+      ],
+      "recipe": "recipe"
     }
   ]
 }

@@ -1,0 +1,40 @@
+<h1 class="title">Sign up</h1>
+<form
+  [formGroup]="regForm"
+  (ngSubmit)="onSubmit()"
+  class="reg-form"
+>
+  <div class="field">
+    <label class="label">First name</label>
+    <input type="text" formControlName="name" class="input">
+    <div class="error" *ngIf="f['name'].touched && f['name'].invalid">Name is required</div>
+  </div>
+
+  <div class="field">
+    <label class="label">Last name</label>
+    <input type="text" formControlName="surname" class="input">
+    <div class="error" *ngIf="f['surname'].touched && f['surname'].invalid">Surname is required</div>
+  </div>
+
+  <div class="field">
+    <label class="label">Email</label>
+    <input type="email" formControlName="email" class="input">
+    <div class="error" *ngIf="f['email'].touched && f['email'].hasError('required')">Email is required</div>
+    <div class="error" *ngIf="f['email'].touched && f['email'].hasError('email')">Invalid email format</div>
+  </div>
+
+  <div class="field">
+    <label class="label">Password</label>
+    <input type="password" formControlName="password" class="input">
+    <div class="error" *ngIf="f['password'].touched && f['password'].invalid">Password is required</div>
+  </div>
+
+  <div class="error global" *ngIf="errorMsg">{{ errorMsg }}</div>
+
+  <button type="submit" class="submit-btn" scaleOnHover>Sign up</button>
+  <a
+    class="link"
+    [routerLink]="['/reg']"
+    (click)="switchToAuth()"
+  >Already have an account?</a>
+</form>

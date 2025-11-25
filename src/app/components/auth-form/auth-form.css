@@ -1,0 +1,67 @@
+.title {
+  font-size: 24px;
+  line-height: 150%;
+  font-weight: 700;
+  color: #111827;
+}
+
+.auth-form {
+  margin-top: 32px;
+  width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label, .error {
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 400;
+  color: #4B5563;
+}
+
+.input {
+  padding-left: 16px;
+  height: 40px;
+  border-radius: 8px;
+  border: #E2E5E9 1px solid;
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 150%;
+  font-weight: 300;
+  outline: none;
+  resize: none;
+}
+
+.submit-btn {
+  height: 40px;
+  background: #F97316;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+  line-height: 100%;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.link {
+  font-size: 17px;
+  line-height: 150%;
+  font-weight: 400;
+  color: #4B5563;
+  text-decoration: underline;
+}
+
+.link:active {
+  color: #4B5563;
+}
+
+.error {
+  color: red;
+}

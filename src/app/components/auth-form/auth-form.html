@@ -1,0 +1,28 @@
+<h1 class="title">Sign in</h1>
+<form
+  [formGroup]="authForm"
+  (ngSubmit)="onSubmit()"
+  class="auth-form"
+>
+  <div class="field">
+    <label class="label">Email</label>
+    <input type="email" formControlName="email" class="input">
+    <div class="error" *ngIf="f['email'].touched && f['email'].hasError('required')">Email is required</div>
+    <div class="error" *ngIf="f['email'].touched && f['email'].hasError('email')">Invalid email format</div>
+  </div>
+
+  <div class="field">
+    <label class="label">Password</label>
+    <input type="password" formControlName="password" class="input">
+    <div class="error" *ngIf="f['password'].touched && f['password'].invalid">Password is required</div>
+  </div>
+
+  <div class="error global" *ngIf="errorMsg">{{ errorMsg }}</div>
+
+  <button type="submit" class="submit-btn" scaleOnHover>Sign in</button>
+  <a
+    class="link"
+    [routerLink]="['/reg']"
+    (click)="switchToReg()"
+  >Create an account</a>
+</form>
