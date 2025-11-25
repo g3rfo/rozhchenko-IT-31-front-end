@@ -33,7 +33,6 @@ export class Auth {
 
         return user;
       }),
-      // Save user
       map(() => {
         return this.http.post('users', user).subscribe();
       }),

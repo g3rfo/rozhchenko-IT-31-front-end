@@ -12,7 +12,7 @@ import { Subscription } from 'rxjs';
 })
 export class Navbar implements OnInit, OnDestroy{
   isAuth = false;
- private sub!: Subscription;
+  private sub!: Subscription;
 
   constructor(private auth: Auth) {}
 
